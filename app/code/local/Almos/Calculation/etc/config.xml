@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<config>
+  <modules>
+    <Almos_Calculation>
+      <version>0.1.0</version>
+    </Almos_Calculation>
+  </modules>
+  <global>
+    <helpers>
+      <calculation>
+        <class>Almos_Calculation_Helper</class>
+      </calculation>
+    </helpers>
+  </global>
+</config> 
