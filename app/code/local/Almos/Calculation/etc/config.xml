@@ -12,4 +12,15 @@
       </calculation>
     </helpers>
   </global>
+  <frontend>
+    <routers>
+      <tester>
+        <use>standard</use>
+        <args>
+          <module>Almos_Calculation</module>
+          <frontName>calculation</frontName>
+        </args>
+      </tester>
+    </routers>
+  </frontend>
 </config> 
