@@ -6,6 +6,34 @@
     </Almos_Calculation>
   </modules>
   <global>
+
+    <models>
+
+      <siteblocks> <!-- Как правило тут namespace_modulename или просто modulename -->
+        <class>Almos_Calculation_Model</class>
+        <resourceModel>siteblocks_resource</resourceModel>
+      </siteblocks>
+
+      <siteblocks_resource>
+        <class>Almos_Calculation_Model_Resource</class>
+        <entities>
+          <block> <!-- наименование модели -->
+            <table>ign_siteblock</table> <!-- название таблицы к которой будет "привязана" модель -->
+          </block>
+        </entities>
+      </siteblocks_resource>
+
+    </models>
+
+
+    <resources>
+      <siteblocks_setup> <!-- именно в папку с таким названием нужно складывать install и upgrade скрипты -->
+        <setup>
+          <module>Almos_Calculation</module>
+        </setup>
+      </siteblocks_setup>
+    </resources>
+
     <helpers>
       <calculation>
         <class>Almos_Calculation_Helper</class>

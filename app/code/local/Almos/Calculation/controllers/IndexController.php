@@ -4,6 +4,9 @@ class Almos_Calculation_IndexController extends Mage_Core_Controller_Front_Actio
 {
 	public function indexAction()
 	{
+		//Null coalescing operator (php7)
+		$username = $this->getRequest()->get('user') ?? 'nobody';
+
 		if ($this->getRequest()->isGet()) {
 			$method = $this->getRequest()->get('method');
 		} else {
@@ -24,5 +27,10 @@ class Almos_Calculation_IndexController extends Mage_Core_Controller_Front_Actio
 				echo Mage::helper('calculation/calculate')->divide(30, 6);
 				break;
 		}
+	}
+
+	public function modelAction(){
+		$model = Mage::getModel('siteblocks/block')->load(1);
+		//$collections = Mage::getModel('siteblocks/block')->getCollection();
 	}
 }
