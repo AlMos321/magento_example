@@ -33,4 +33,9 @@ class Almos_Calculation_IndexController extends Mage_Core_Controller_Front_Actio
 		$model = Mage::getModel('siteblocks/block')->load(1);
 		//$collections = Mage::getModel('siteblocks/block')->getCollection();
 	}
+
+	public function eventAction(){
+		$event_data_array  =  ['cid' => '123'];
+		Mage::dispatchEvent('almos_calculation_something', $event_data_array);
+	}
 }

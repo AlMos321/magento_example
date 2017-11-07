@@ -7,24 +7,18 @@
   </modules>
   <global>
 
-    <models>
-
-      <siteblocks> <!-- Как правило тут namespace_modulename или просто modulename -->
-        <class>Almos_Calculation_Model</class>
-        <resourceModel>siteblocks_resource</resourceModel>
-      </siteblocks>
-
-      <siteblocks_resource>
-        <class>Almos_Calculation_Model_Resource</class>
-        <entities>
-          <block> <!-- наименование модели -->
-            <table>ign_siteblock</table> <!-- название таблицы к которой будет "привязана" модель -->
-          </block>
-        </entities>
-      </siteblocks_resource>
-
-    </models>
-
+    <!--События-->
+    <events>
+      <almos_calculation_something>
+        <observers>
+          <some_name>
+            <type>singleton</type>
+            <class>almos_calculation_model_observer</class>
+            <method>someName</method>
+          </some_name>
+        </observers>
+      </almos_calculation_something>
+    </events>
 
     <resources>
       <siteblocks_setup> <!-- именно в папку с таким названием нужно складывать install и upgrade скрипты -->
@@ -32,7 +26,40 @@
           <module>Almos_Calculation</module>
         </setup>
       </siteblocks_setup>
+      <seo_setup>
+        <setup>
+          <module>Almos_Calculation</module>
+        </setup>
+      </seo_setup>
     </resources>
+
+    <models>
+      <siteblocks> <!-- Как правило тут namespace_modulename или просто modulename -->
+        <class>Almos_Calculation_Model</class>
+        <resourceModel>siteblocks_resource</resourceModel>
+      </siteblocks>
+      <siteblocks_resource>
+        <class>Almos_Calculation_Model_Resource</class>
+        <entities>
+          <block>                         <!-- наименование модели -->
+            <table>siteblock</table> <!-- название таблицы к которой будет "привязана" модель -->
+          </block>
+        </entities>
+      </siteblocks_resource>
+
+      <seomodel>
+        <class>Almos_Calculation_Model</class>
+        <resourceModel>seo_resource</resourceModel>
+      </seomodel>
+      <seo_resource>
+        <class>Almos_Calculation_Model_Resource</class>
+        <entities>
+          <seo>                         <!-- наименование модели -->
+            <table>seoinfo</table> <!-- название таблицы к которой будет "привязана" модель -->
+          </seo>
+        </entities>
+      </seo_resource>
+    </models>
 
     <helpers>
       <calculation>
