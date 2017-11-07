@@ -18,6 +18,17 @@
           </some_name>
         </observers>
       </almos_calculation_something>
+
+      <admin_user_authenticate_before>
+        <observers>
+          <some_name2>
+            <type>singleton</type>
+            <class>almos_calculation_model_observer</class>
+            <method>loginEvent</method>
+          </some_name2>
+        </observers>
+      </admin_user_authenticate_before>
+
     </events>
 
     <resources>
